@@ -8,4 +8,3 @@ RUN rc-update add sshd && rc-status && touch /run/openrc/softlevel
 
 EXPOSE 22
 ENTRYPOINT  /etc/init.d/sshd start && sh
-CMD tail -f /dev/null
