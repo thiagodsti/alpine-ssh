@@ -6,5 +6,5 @@ RUN sed -i -e 's/#PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config
 RUN sed -i -e 's/#PermitEmptyPasswords.*/PermitEmptyPasswords yes/g' /etc/ssh/sshd_config 
 RUN rc-update add sshd && rc-status && touch /run/openrc/softlevel
 
-EXPOSE 22
+EXPOSE 22 873
 ENTRYPOINT  /etc/init.d/sshd start && sh
