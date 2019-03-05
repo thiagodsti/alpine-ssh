@@ -7,4 +7,4 @@ RUN sed -i -e 's/#PermitEmptyPasswords.*/PermitEmptyPasswords yes/g' /etc/ssh/ss
 RUN rc-update add sshd && rc-status && touch /run/openrc/softlevel
 
 EXPOSE 22 873
-ENTRYPOINT  /etc/init.d/sshd start && sh
+ENTRYPOINT  /etc/init.d/sshd start && rsync --daemon && sh
