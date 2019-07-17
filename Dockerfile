@@ -1,6 +1,6 @@
 FROM alpine
 
-RUN apk add --update openssh openrc rsync sudo
+RUN apk add --update openssh openrc rsync sudo python
 RUN ssh-keygen -A
 RUN sed -i -e 's/#PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config 
 RUN sed -i -e 's/#PermitEmptyPasswords.*/PermitEmptyPasswords yes/g' /etc/ssh/sshd_config 
